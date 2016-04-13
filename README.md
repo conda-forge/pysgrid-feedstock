@@ -3,7 +3,7 @@ About pysgrid
 
 Home: https://github.com/sgrid/pysgrid
 
-Package license: BSD
+Package license: BSD-3-Clause
 
 Feedstock license: BSD
 

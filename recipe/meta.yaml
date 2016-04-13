@@ -28,9 +28,10 @@ test:
 
 about:
     home: https://github.com/sgrid/pysgrid
-    license: BSD
+    license: BSD-3-Clause
     summary: Python package for working with staggered gridded data
 
 extra:
     recipe-maintainers:
+        - ayan-usgs
         - ocefpaf
