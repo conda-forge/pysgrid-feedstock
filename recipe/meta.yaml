@@ -1,4 +1,4 @@
-{% set version = "0.1.1" %}
+{% set version = "0.3.1" %}
 
 package:
     name: pysgrid
@@ -7,7 +7,7 @@ package:
 source:
     fn: v{{ version }}.tar.gz
     url: https://github.com/sgrid/pysgrid/archive/v{{ version }}.tar.gz
-    md5: cec0fbcf461f42687dd3c3b5ab667e8f
+    sha256: 63b07ef0c2acf4c949e6c362d70f8ff024434f819691fe6895fe475267dd1aab
 
 build:
     number: 0
@@ -21,6 +21,7 @@ requirements:
         - python
         - numpy
         - netcdf4
+        - cell_tree2d
 
 test:
     imports:
@@ -28,8 +29,8 @@ test:
 
 about:
     home: https://github.com/sgrid/pysgrid
-    license: BSD-3-Clause
-    summary: Python package for working with staggered gridded data
+    license: BSD 3-Clause
+    summary: 'Python package for working with staggered gridded data.'
 
 extra:
     recipe-maintainers:
