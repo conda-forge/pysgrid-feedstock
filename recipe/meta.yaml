@@ -1,38 +1,42 @@
 {% set version = "0.3.1" %}
 
 package:
-    name: pysgrid
-    version: {{ version }}
+  name: pysgrid
+  version: {{ version }}
 
 source:
-    fn: v{{ version }}.tar.gz
-    url: https://github.com/sgrid/pysgrid/archive/v{{ version }}.tar.gz
-    sha256: 63b07ef0c2acf4c949e6c362d70f8ff024434f819691fe6895fe475267dd1aab
+  fn: v{{ version }}.tar.gz
+  url: https://github.com/sgrid/pysgrid/archive/v{{ version }}.tar.gz
+  sha256: 63b07ef0c2acf4c949e6c362d70f8ff024434f819691fe6895fe475267dd1aab
 
 build:
-    number: 0
-    script: python setup.py install --single-version-externally-managed --record record.txt
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
-    build:
-        - python
-        - setuptools
-    run:
-        - python
-        - numpy
-        - netcdf4
-        - cell_tree2d
+  build:
+    - python
+    - setuptools
+  run:
+    - python
+    - numpy
+    - netcdf4
+    - cell_tree2d
 
 test:
-    imports:
-        - pysgrid
+  imports:
+    - pysgrid
+  commands:
+    - conda inspect linkages -p $PREFIX pysgrid  # [not win]
+    - conda inspect objects -p $PREFIX pysgrid  # [osx]
 
 about:
-    home: https://github.com/sgrid/pysgrid
-    license: BSD 3-Clause
-    summary: 'Python package for working with staggered gridded data.'
+  home: https://github.com/sgrid/pysgrid
+  license: BSD 3-Clause
+  license_file: LICENSE
+  summary: 'Python package for working with staggered gridded data.'
 
 extra:
-    recipe-maintainers:
-        - ayan-usgs
-        - ocefpaf
+  recipe-maintainers:
+    - ayan-usgs
+    - ocefpaf
