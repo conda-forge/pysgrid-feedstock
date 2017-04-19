@@ -21,12 +21,13 @@ requirements:
     - python
     - numpy
     - netcdf4
-  test:
+
+test:
+  requires:
     - cell_tree2d
     - scipy
     - pytest
 
-test:
   imports:
     - pysgrid
 
