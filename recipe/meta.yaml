@@ -1,4 +1,4 @@
-{% set version = "0.3.1" %}
+{% set version = "0.3.5" %}
 
 package:
   name: pysgrid
@@ -7,7 +7,7 @@ package:
 source:
   fn: v{{ version }}.tar.gz
   url: https://github.com/sgrid/pysgrid/archive/v{{ version }}.tar.gz
-  sha256: 63b07ef0c2acf4c949e6c362d70f8ff024434f819691fe6895fe475267dd1aab
+  sha256: f5c5531be9c45651ed18899645bd49e92645da1107a800e7d00560b31aff023a
 
 build:
   number: 0
@@ -21,14 +21,20 @@ requirements:
     - python
     - numpy
     - netcdf4
-    - cell_tree2d
 
 test:
+  requires:
+    - cell_tree2d
+    - scipy
+    - pytest
+
   imports:
     - pysgrid
+
   commands:
     - conda inspect linkages -p $PREFIX pysgrid  # [not win]
     - conda inspect objects -p $PREFIX pysgrid  # [osx]
+    - pytest --pyargs pysgrid
 
 about:
   home: https://github.com/sgrid/pysgrid
@@ -40,3 +46,4 @@ extra:
   recipe-maintainers:
     - ayan-usgs
     - ocefpaf
+    - ChrisBarker-NOAA
