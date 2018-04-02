@@ -27,6 +27,7 @@ test:
     - scipy
     - pytest
     - mock
+    - cell_tree2d
   imports:
     - pysgrid
   commands:
