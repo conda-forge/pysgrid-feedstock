@@ -29,13 +29,13 @@ test:
     - mock
   imports:
     - pysgrid
-  # commands:
-    # - pytest --pyargs pysgrid
+  commands:
+    - pytest --pyargs pysgrid
 
 about:
   home: https://github.com/sgrid/pysgrid
   license: BSD 3-Clause
-  # license_file: LICENSE
+  license_file: LICENSE
   summary: 'Python package for working with staggered gridded data.'
 
 extra:
